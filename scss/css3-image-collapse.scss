@@ -1,0 +1,130 @@
+/**
+ * CSS3 animated image-collapse.
+ * Expands a list of horizontally-stacked images on hover.
+ *
+ *    <ul class="front-slides">
+ *          <li class="slide-1">
+ *              <img src="1.jpg"/>
+ *          </li>
+ *          <li class="slide-2">
+ *              <img src="2.jpg"/>
+ *          </li>
+ *    </ul>
+ * @author Ando Roots <ando.roots@diara.ee>
+ * @created 2012-10-09
+**/
+
+// ------------- START of config section ------------------------------
+
+// The width of the slides container element (the ul) - including slide padding
+$slides-width: 800px;
+
+// The height of the slides container element (the ul)
+$slides-height: 400px;
+
+// How many images in the list?
+$number-of-slides: 4;
+
+// Image border width
+$slide-border-width: 4px;
+
+// Width of one image in a "open" state (when hovered on)
+$slide-width-open: 380px;
+
+// The color of the slide titles
+$color-slide-title: #FFF;
+
+// Color of slide (li) borders
+$color-slide-border: #FFF;
+
+// Title font size
+$slide-title-size: 32px;
+
+// ------------- END of config section ------------------------------
+
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+
+// Fancy font for slide titles
+@import url(http://fonts.googleapis.com/css?family=Bubbler+One);
+
+// Width of one image in a "closed" state (initial state)
+$slide-width-closed: $slides-width / $number-of-slides - ($slide-border-width*2);
+
+// The UL element
+.front-slides {
+  width: $slides-width;
+  height: $slides-height;
+  margin: 0;
+  position: absolute;
+  overflow: hidden;
+
+  li {
+	list-style: none;
+	border: $slide-border-width solid $color-slide-border;
+	height: $slides-height - ($slide-border-width*2);
+	width: $slide-width-closed;
+	position: absolute;
+	left: 0;
+	z-index: 2;
+	@include transition-property(width, left);
+	@include transition-duration(1s);
+
+	&:hover {
+	  width: $slide-width-open;
+	  z-index: 3;
+
+	  h4 {
+		@include rotate(0deg);
+		bottom: 10px;
+		right: 10px;
+	  }
+	}
+
+	// Slide title (h4)
+	h4 {
+	  position: absolute;
+	  bottom: 0;
+	  right: 10px;
+	  display: block;
+	  white-space: nowrap;
+	  margin: 0;
+	  padding: 0;
+	  font-family: 'Bubbler One', sans-serif;
+	  color: $color-slide-title;
+	  font-size: $slide-title-size;
+	  @include apply-origin(top right, false);
+	  @include rotate(90deg);
+	  @include transition-property(transform, right, bottom);
+	  @include transition-duration(1s);
+	}
+
+	// Slide image
+	img {
+	  height: 100%;
+	  border: 0;
+	}
+  }
+
+  // Calculate left offset positions for each slide
+  @for $i from 1 through $number-of-slides {
+	.slide-#{$i} {
+	  $width-multiplier: $i - 1;
+	  $left-offset: $slide-width-closed * $width-multiplier + ($slide-border-width * 2 * $width-multiplier);
+
+	  @if $i > 1 {
+		left: $left-offset;
+	  }
+
+	  // Hover offset position
+	  &:hover {
+		@if $i > 1 {
+		  left: $left-offset - ($slide-width-open - $slide-width-closed)/2;
+		}
+		@if $i == $number-of-slides {
+		  left: $left-offset - ($slide-width-open - $slide-width-closed);
+		}
+	  }
+	}
+  }
+}

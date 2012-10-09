@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>CSS3 Image Collapse</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="copyright" content="Diara OÜ">
+    <meta name="author" content="Ando Roots">
+    <meta name="viewport" content="width=device-width">
+
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/css3-image-collapse.css">
+    <link rel="stylesheet" href="css/example2.css">
+</head>
+<body style="margin-top: 60px">
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">CSS3 Image Collapse</a>
+
+            <div class="nav-collapse collapse">
+                <ul class="nav pull-right">
+                    <li>
+                        <a href="https://bitbucket.org/diara/css3-image-collapse">
+                            <i class="icon-random"></i>Fork on BitBucket
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span8 offset1">
+
+        <p class="lead">
+            ...a way of presenting a list of image slides that animate and expand on mouse-over
+            - and it's pure CSS!
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="span10 offset1">
+
+        <div class="well" style="height: 450px;">
+            <h2>Example #1</h2>
+            <ul class="front-slides">
+                <li class="slide-1">
+                    <img src="img/1.jpg" alt="Slide 1"/>
+                    <h4>Morning Grass</h4>
+                </li>
+                <li class="slide-2">
+                    <img src="img/2.jpg" alt="Slide 2"/>
+                    <h4>Hillside Sunrise</h4>
+                </li>
+                <li class="slide-3">
+                    <img src="img/3.jpg" alt="Slide 3"/>
+                    <h4>Catch in Rye</h4>
+                </li>
+                <li class="slide-4">
+                    <img src="img/4.jpg" alt="Slide 4"/>
+                    <h4>Wheaty</h4>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="span10 offset1">
+        <div class="well" style="height: 350px;">
+            <h2>Example #2</h2>
+            <ul class="front-slides-example2">
+                <li class="slide-1">
+                    <img src="img/1.jpg" alt="Slide 1"/>
+                    <h4>Morning Grass</h4>
+                </li>
+                <li class="slide-2">
+                    <img src="img/2.jpg" alt="Slide 2"/>
+                    <h4>Hillside Sunrise</h4>
+                </li>
+                <li class="slide-3">
+                    <img src="img/3.jpg" alt="Slide 3"/>
+                    <h4>Catch in Rye</h4>
+                </li>
+                <li class="slide-4">
+                    <img src="img/4.jpg" alt="Slide 4"/>
+                    <h4>Wheaty</h4>
+                </li>
+                <li class="slide-5">
+                    <img src="img/1.jpg" alt="Slide 5"/>
+                    <h4>Morning Grass</h4>
+                </li>
+                <li class="slide-6">
+                    <img src="img/5.jpg" alt="Slide 6"/>
+                    <h4>Autumny Leaves</h4>
+                </li>
+                <li class="slide-7">
+                    <img src="img/3.jpg" alt="Slide 7"/>
+                    <h4>Catch in Rye</h4>
+                </li>
+                <li class="slide-8">
+                    <img src="img/4.jpg" alt="Slide 8"/>
+                    <h4>Wheaty</h4>
+                </li>
+            </ul>
+
+        </div>
+
+        <h2>Features</h2>
+        <ul>
+            <li>Undefined number of image-slides</li>
+            <li>Slides have animated titles</li>
+            <li>Written with <a href="sass-lang.com">SASS</a> and <a href="http://compass-style.org/">Compass</a></li>
+            <li>Easily customizable through SASS variables</li>
+            <li>No JavaScript, just CSS</li>
+            <li>Each slide can act as a link</li>
+        </ul>
+
+        <ul>
+            <li>
+                <small>* Title transformations and animations require browser support.</small>
+            </li>
+            <li>
+                <small>** I don't care about old IE-s. Neither should you or your clients.</small>
+            </li>
+        </ul>
+
+        <h2>Usage</h2>
+
+        <ol>
+            <li>Include the stylesheet. You need to recompile if you want to customize (or just override).</li>
+            <li>Specify slides</li>
+        </ol>
+
+
+        <pre>&lt;ul class=&quot;front-slides&quot;&gt;
+     &lt;li class=&quot;slide-1&quot;&gt;
+         &lt;img src=&quot;img/1.jpg&quot; alt=&quot;Slide 1&quot;/&gt;
+         &lt;h4&gt;Morning Grass&lt;/h4&gt;
+     &lt;/li&gt;
+     &lt;li class=&quot;slide-2&quot;&gt;
+         &lt;img src=&quot;img/2.jpg&quot; alt=&quot;Slide 2&quot;/&gt;
+         &lt;h4&gt;Hillside Sunrise&lt;/h4&gt;
+     &lt;/li&gt;
+     &lt;li class=&quot;slide-3&quot;&gt;
+         &lt;img src=&quot;img/3.jpg&quot; alt=&quot;Slide 3&quot;/&gt;
+         &lt;h4&gt;Catch in Rye&lt;/h4&gt;
+     &lt;/li&gt;
+     &lt;li class=&quot;slide-4&quot;&gt;
+         &lt;img src=&quot;img/4.jpg&quot; alt=&quot;Slide 4&quot;/&gt;
+         &lt;h4&gt;Wheaty&lt;/h4&gt;
+     &lt;/li&gt;
+ &lt;/ul&gt;</pre>
+        <p>
+            Numeric slide classes are used for positioning the images.
+        </p>
+
+        <h2>Download</h2>
+
+        <p>
+            <a href="https://bitbucket.org/diara/css3-image-collapse" class="btn btn-block">
+                <i class="icon-random"></i> Get it from BitBucket
+            </a>.
+        </p>
+
+        <h2>Todo</h2>
+        <ol>
+            <li>Be responsive</li>
+            <li>Do something about non-supported browsers (using Modernizr)</li>
+            <li>Add description box (in addition to title)</li>
+            <li>Generalize class names, allowing for easier config of multiple sliders in one page</li>
+            <li>Look into using -nth-of-type to get rid of slide numbers</li>
+        </ol>
+        <p class="help-block">Help and support (pull requests) in implementing those features is appreciated.</p>
+
+        <h2>The MIT Licence</h2>
+
+        <p>Copyright (c) 2012 <a href="http://about.me/andoroots">Ando Roots</a></p>
+
+        <p>
+            Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+            documentation
+            files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use,
+            copy,
+            modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the
+            Software is furnished to do so, subject to the following conditions:
+        </p>
+
+        <p>
+            The above copyright notice and this permission notice shall be included in all copies or substantial portions of the
+            Software.
+        </p>
+
+        <p>
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+            WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+            COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+            OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        </p>
+    </div>
+</div>
+</body>
+</html>
