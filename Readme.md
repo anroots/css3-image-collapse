@@ -1,4 +1,4 @@
-# CSS3 Image Collapse
+# CSS3 Image Collapse 1.0
 
 ...a way of presenting a list of image slides that animate and expand on mouse-over - and it's pure CSS!
 
