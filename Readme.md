@@ -2,4 +2,6 @@
 
 ...a way of presenting a list of image slides that animate and expand on mouse-over - and it's pure CSS!
 
+![Screenshot](https://raw.github.com/anroots/css3-image-collapse/master/img/Screenshot1.png "Screenshot")
+
 More info and demo in index.html.
