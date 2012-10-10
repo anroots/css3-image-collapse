@@ -31,16 +31,23 @@ $number-of-slides: 4;
 $slide-border-width: 4px;
 
 // Width of one image in a "open" state (when hovered on)
-$slide-width-open: 380px;
+// Won't have any effect when $slide-stretch-open is false.
+$slide-width-open: 320px;
 
 // The color of the slide titles
 $color-slide-title: #FFF;
 
 // Color of slide (li) borders
-$color-slide-border: #FFF;
+$color-slide-border: #000;
 
 // Title font size
 $slide-title-size: 32px;
+
+// Whether to stretch the slide image when "open" to fit container dimensions
+$slide-stretch-open: true;
+
+// Whether to stretch the image when "closed" or to clip a portion of it
+$slide-stretch-closed: true;
 
 // ------------- END of config section ------------------------------
 
@@ -61,17 +68,20 @@ $slide-width-closed: $slides-width / $number-of-slides - ($slide-border-width*2)
   position: absolute;
   overflow: hidden;
 
+  $slide-li-height: $slides-height - ($slide-border-width*2);
   li {
 	list-style: none;
 	border: $slide-border-width solid $color-slide-border;
-	height: $slides-height - ($slide-border-width*2);
+	height: $slide-li-height;
 	width: $slide-width-closed;
 	position: absolute;
 	left: 0;
 	z-index: 2;
 	@include transition-property(width, left);
 	@include transition-duration(1s);
+	overflow: hide;
 
+	// When the image is in "open" state (hover)
 	&:hover {
 	  width: $slide-width-open;
 	  z-index: 3;
@@ -80,6 +90,17 @@ $slide-width-closed: $slides-width / $number-of-slides - ($slide-border-width*2)
 		@include rotate(0deg);
 		bottom: 10px;
 		right: 10px;
+	  }
+
+	  img {
+		clip: auto;
+		margin: 0;
+
+		// Stretch the image to fill container slide dimensions
+		@if $slide-stretch-open {
+		  height: 100%;
+		  width: $slide-width-open;
+		}
 	  }
 	}
 
@@ -101,10 +122,23 @@ $slide-width-closed: $slides-width / $number-of-slides - ($slide-border-width*2)
 	  @include transition-duration(1s);
 	}
 
+	$slide-clip-offset-x: 100px;
+	$slide-clip-offset-y: 100px;
+
 	// Slide image
 	img {
-	  height: 100%;
+	  max-width: none !important;
 	  border: 0;
+
+	  @if $slide-stretch-closed {
+		width: 100%;
+		height: 100%;
+	  } @else {
+		position: absolute;
+		margin-left: $slide-clip-offset-x * -1;
+		margin-top: $slide-clip-offset-y * -1;
+		clip: rect($slide-clip-offset-y, $slide-width-closed+$slide-clip-offset-x, $slide-li-height+$slide-clip-offset-y, $slide-clip-offset-x);
+	  }
 	}
   }
 

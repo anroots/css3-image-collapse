@@ -44,7 +44,7 @@
 
         <p class="lead">
             ...a way of presenting a list of image slides that animate and expand on mouse-over
-            - and it's pure CSS!
+            - without JavaScript.
         </p>
     </div>
 </div>
@@ -55,20 +55,28 @@
             <h2>Example #1</h2>
             <ul class="front-slides">
                 <li class="slide-1">
-                    <img src="img/1.jpg" alt="Slide 1"/>
-                    <h4>Morning Grass</h4>
+                    <a href="#">
+                        <img src="http://placekitten.com/1000/800" height="800" width="1000" alt="Slide 1"/>
+                        <h4>Dana</h4>
+                    </a>
                 </li>
                 <li class="slide-2">
-                    <img src="img/2.jpg" alt="Slide 2"/>
-                    <h4>Hillside Sunrise</h4>
+                    <a href="#">
+                        <img src="http://placekitten.com/800/1000" height="1000" width="800" alt="Slide 2"/>
+                        <h4>Mrs Pouty</h4>
+                    </a>
                 </li>
                 <li class="slide-3">
-                    <img src="img/3.jpg" alt="Slide 3"/>
-                    <h4>Catch in Rye</h4>
+                    <a href="#">
+                        <img src="http://placekitten.com/500/600" height="600" width="500" alt="Slide 3"/>
+                        <h4>Garfield</h4>
+                    </a>
                 </li>
                 <li class="slide-4">
-                    <img src="img/4.jpg" alt="Slide 4"/>
-                    <h4>Wheaty</h4>
+                    <a href="#">
+                        <img src="http://placekitten.com/1100/1100" height="1100" width="1100" alt="Slide 4"/>
+                        <h4>Beauty</h4>
+                    </a>
                 </li>
             </ul>
 
@@ -119,12 +127,11 @@
 
         <h2>Features</h2>
         <ul>
-            <li>Undefined number of image-slides</li>
-            <li>Slides have animated titles</li>
+            <li>Unlimited number of image-slides</li>
+            <li>Slide expanding is animated</li>
             <li>Written with <a href="sass-lang.com">SASS</a> and <a href="http://compass-style.org/">Compass</a></li>
             <li>Easily customizable through SASS variables</li>
             <li>No JavaScript, just CSS</li>
-            <li>Each slide can act as a link</li>
         </ul>
 
         <ul>
@@ -136,6 +143,11 @@
             </li>
         </ul>
 
+        <h3>Notes</h3>
+        <ul>
+            <li>Untested</li>
+            <li>Specify <code>width</code> and <code>height</code> tags on your <code>img</code> elements.</li>
+        </ul>
         <h2>Usage</h2>
 
         <p class="help-block">Note: Use Compass to customize: change <code>scss/css3-image-collapse.scss</code> to suit
@@ -149,24 +161,20 @@
         </ol>
 
 
-        <pre>&lt;ul class=&quot;front-slides&quot;&gt;
-     &lt;li class=&quot;slide-1&quot;&gt;
-         &lt;img src=&quot;img/1.jpg&quot; alt=&quot;Slide 1&quot;/&gt;
-         &lt;h4&gt;Morning Grass&lt;/h4&gt;
-     &lt;/li&gt;
-     &lt;li class=&quot;slide-2&quot;&gt;
-         &lt;img src=&quot;img/2.jpg&quot; alt=&quot;Slide 2&quot;/&gt;
-         &lt;h4&gt;Hillside Sunrise&lt;/h4&gt;
-     &lt;/li&gt;
-     &lt;li class=&quot;slide-3&quot;&gt;
-         &lt;img src=&quot;img/3.jpg&quot; alt=&quot;Slide 3&quot;/&gt;
-         &lt;h4&gt;Catch in Rye&lt;/h4&gt;
-     &lt;/li&gt;
-     &lt;li class=&quot;slide-4&quot;&gt;
-         &lt;img src=&quot;img/4.jpg&quot; alt=&quot;Slide 4&quot;/&gt;
-         &lt;h4&gt;Wheaty&lt;/h4&gt;
-     &lt;/li&gt;
- &lt;/ul&gt;</pre>
+<pre>&lt;ul class=&quot;front-slides&quot;&gt;
+    &lt;li class=&quot;slide-1&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img src=&quot;http://placekitten.com/1000/800&quot; height=&quot;800&quot; width=&quot;1000&quot; alt=&quot;Slide 1&quot;/&gt;
+            &lt;h4&gt;Dana&lt;/h4&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;slide-2&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+            &lt;img src=&quot;http://placekitten.com/800/1000&quot; height=&quot;1000&quot; width=&quot;800&quot; alt=&quot;Slide 2&quot;/&gt;
+            &lt;h4&gt;Mrs Pouty&lt;/h4&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</pre>
         <p>
             Numeric slide classes are used for positioning the images.
         </p>
