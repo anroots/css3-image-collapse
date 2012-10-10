@@ -43,7 +43,7 @@
     <div class="span8 offset1">
 
         <p class="lead">
-            ...a way of presenting a list of image slides that animate and expand on mouse-over
+            ...a stylesheet for presenting a list of image slides that animate and expand on mouse-over
             - without JavaScript.
         </p>
     </div>
@@ -132,6 +132,7 @@
             <li>Written with <a href="sass-lang.com">SASS</a> and <a href="http://compass-style.org/">Compass</a></li>
             <li>Easily customizable through SASS variables</li>
             <li>No JavaScript, just CSS</li>
+            <li>Support for several differently configured sliders in one page</li>
         </ul>
 
         <ul>
@@ -148,16 +149,20 @@
             <li>Untested</li>
             <li>Specify <code>width</code> and <code>height</code> tags on your <code>img</code> elements.</li>
         </ul>
+
         <h2>Usage</h2>
 
-        <p class="help-block">Note: Use Compass to customize: change <code>scss/css3-image-collapse.scss</code> to suit
-            your needs and run <code>compass watch</code> in the root directory. Change <code>config.rb</code> for compass
+        <p class="help-block">Note: Use Compass to recompile: change scss config files in
+            <code>scss/*.scss</code> to suit your needs and run
+            <code>compass watch</code> in the root directory. Change <code>config.rb</code> for compass
             settings.</p>
         <ol>
-            <li>Include <a href="https://github.com/anroots/css3-image-collapse/blob/master/css/css3-image-collapse.css">the
-                stylesheet</a>. You need to recompile if you want to customize (or just override).
+            <li>Open <code>scss/example1.scss</code> and customize.</li>
+            <li>Include <a href="https://github.com/anroots/css3-image-collapse/blob/master/css/example1.css">the
+                compiled stylesheet</a>. <br/>
+                <code>&lt;link rel="stylesheet" href="css/example1.css"&gt</code>
             </li>
-            <li>Specify slides</li>
+            <li>Specify slides in your HTML</li>
         </ol>
 
 
@@ -192,7 +197,6 @@
             <li>Be responsive</li>
             <li>Do something about non-supported browsers (using Modernizr)</li>
             <li>Add description box (in addition to title)</li>
-            <li>Generalize class names, allowing for easier config of multiple sliders in one page</li>
             <li>Look into using -nth-of-type to get rid of slide numbers</li>
         </ol>
         <p class="help-block">Help and support (pull requests) in implementing those features is appreciated.</p>
