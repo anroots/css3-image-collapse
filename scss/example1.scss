@@ -21,32 +21,32 @@
 // ------------- START of config section ------------------------------
 
 // The name of the main container (ul) class to use
-$slides-class-name: slides-example2;
+$slides-class-name: slides-example1;
 
 // The width of the slides container element (the ul) - including slide padding
-$slides-width: 900px;
+$slides-width: 800px;
 
 // The height of the slides container element (the ul)
-$slides-height: 300px;
+$slides-height: 400px;
 
 // How many images in the list?
-$number-of-slides: 8;
+$number-of-slides: 4;
 
 // Image border width
-$slide-border-width: 2px;
+$slide-border-width: 4px;
 
 // Width of one image in a "open" state (when hovered on)
 // Won't have any effect when $slide-stretch-open is false.
-$slide-width-open: 200px;
+$slide-width-open: 320px;
 
 // The color of the slide titles
-$color-slide-title: #FEFEFE;
+$color-slide-title: #FFF;
 
 // Color of slide (li) borders
-$color-slide-border: #e8e8e8;
+$color-slide-border: #000;
 
 // Title font size
-$slide-title-size: 20px;
+$slide-title-size: 32px;
 
 // Whether to stretch the slide image when "open" to fit container dimensions
 $slide-stretch-open: true;
